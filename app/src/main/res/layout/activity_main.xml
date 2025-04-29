@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Join Call Button -->
+    <Button
+        android:id="@+id/join_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="Join Call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Remote Video View (Full Screen) -->
+    <FrameLayout
+        android:id="@+id/remoteVideoViewContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       />
+
+    <!-- Local Video Preview (Small window in corner) -->
+    <FrameLayout
+        android:id="@+id/localVideoViewContainer"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_margin="16dp"
+        android:background="#33000000"
+        android:elevation="200dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Call Control Buttons (Mute, Switch, End Call, etc.) -->
+    <!-- Call Controls -->
+    <LinearLayout
+        android:id="@+id/call_controls_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_mute"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_mic"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/round_button" />
+
+        <ImageButton
+            android:id="@+id/btn_end"
+            android:layout_width="60dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_call_end"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/round_button" />
+
+        <ImageButton
+            android:id="@+id/btn_switch_camera"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_camera_switch"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/round_button" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
