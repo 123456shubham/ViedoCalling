@@ -1,6 +1,7 @@
 package com.example.agroaviedocalling
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private val appId = "7ac6c604008c4036ba8ec3d366f7ede1"
     private val appCertificate = "049f668b993f43e689e76ac86d9e3a09"
-    private val channelName = "testcase"
+    private val channelName = "testExample"
     private val expirationTimeInSeconds = 360000
     private val uid = 0
 
@@ -178,6 +179,7 @@ class MainActivity : AppCompatActivity() {
         }.start()
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun enableLocalVideoDragging() {
         var dX = 0f
         var dY = 0f
